@@ -13,3 +13,18 @@ I created several functions to make the program work properly:
 
 I also used different colors and fonts in Tkinter to make the interface clear and easy to read. The event days are highlighted in blue, while the rest of the calendar remains in a light cream color. This project helped me understand Tkinter layouts, event handling, file storage, and user-friendly UI design.
 
+**User-documentation**:
+ 
+ Step 1: 
+- Enter the year you want to see your calendar. Then click to "show calendar" button. 
+You will now get a yearly calendar view. 
+
+ Step 2:
+- To add/remove event, use the buttons in the bottom of the window. 
+ To add first name the event, in the next window that will be opened enter the date you want to add the event. If correctly implemented, you will see the event colored differently. Also when clicked on the date you will see what event you have on that day (a window will pop up).
+
+ Note: The program will save the date added even if you exit. 
+
+- To remove the event, click to "Remove Event" button and enter the date you want to remove. 
+
+- To exit you can simply click on "Exit" button.
