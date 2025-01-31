@@ -11,4 +11,5 @@ I created several functions to make the program work properly:
 - remove_event(): Instead of asking the user to type a date, I made a scrollable list of events, so the user can just select which one to remove. This makes it easier and reduces errors.
 - save_events() and load_events(): These functions handle saving and loading event data from a file.
 
-I also used different colors and fonts in Tkinter to make the interface clear and easy to read. The event days are highlighted in blue, while the rest of the calendar remains in a light cream color. This project helped me understand Tkinter layouts, event handling, file storage, and user-friendly UI design**.
+I also used different colors and fonts in Tkinter to make the interface clear and easy to read. The event days are highlighted in blue, while the rest of the calendar remains in a light cream color. This project helped me understand Tkinter layouts, event handling, file storage, and user-friendly UI design.
+
