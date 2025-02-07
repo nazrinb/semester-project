@@ -18,15 +18,44 @@ def load_events():
 
 load_events()
 
+# add event function 
 def add_event():
-    event_name = simpledialog.askstring("Add Event", "Enter event name:")
-    if event_name:
+    def confirm_event():
+        event_name = entry.get().strip()
+        if not event_name:
+            messagebox.showerror("Error", "Event name cannot be empty.")
+            return
+
         event_date = simpledialog.askstring("Add Event", "Enter event date (YYYY-MM-DD):")
         if event_date:
             events[event_date] = event_name
-            save_events() 
+            save_events()  
+
             messagebox.showinfo("Success", f"Event '{event_name}' added on {event_date}!")
+            event_window.destroy()
             show_year_calendar()  
+
+    # pop-up windows
+    event_window = tk.Toplevel(root)
+    event_window.title("Add Event")
+    event_window.geometry("300x150")  
+    event_window.resizable(False, False)  
+    event_window.configure(bg="#faf0ca")
+
+    tk.Label(event_window, text="Enter Event Name:", font=("Helvetica", 12, "bold"), bg="#faf0ca", fg="#0d3b66").pack(pady=10)
+    
+    entry = tk.Entry(event_window, font=("Helvetica", 12), bg="#ffffff", fg="#0d3b66", width=25)
+    entry.pack(pady=5)
+
+    button_frame = tk.Frame(event_window, bg="#faf0ca")
+    button_frame.pack(pady=10)
+
+    add_button = tk.Button(button_frame, text="Add", font=("Helvetica", 12, "bold"), bg="#faf0ca", fg="#0d3b66", command=confirm_event)
+    cancel_button = tk.Button(button_frame, text="Cancel", font=("Helvetica", 12, "bold"), bg="#faf0ca", fg="#0d3b66", command=event_window.destroy)
+
+    add_button.pack(side="left", padx=5)
+    cancel_button.pack(side="left", padx=5)
+ 
 
 def remove_event():
     event_date = simpledialog.askstring("Remove Event", "Enter event date (YYYY-MM-DD):")
@@ -135,6 +164,7 @@ root.title("Yearly Calendar")
 root.attributes('-fullscreen', True)
 root.configure(bg="#0d3b66")
 
+# Year Entry
 top_frame = tk.Frame(root, bg="#0d3b66")
 top_frame.pack(fill="x", pady=10)
 
